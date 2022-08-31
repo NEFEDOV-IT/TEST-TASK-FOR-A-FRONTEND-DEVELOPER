@@ -1,0 +1,25 @@
+.sort {
+  width: 152px;
+  padding: 35px 20px;
+  background-color: #BDBDBD;
+  @media screen and (max-width: 545px) {
+    width: 100%;
+  }
+  & .sort__title {
+    margin-bottom: 10px;
+  }
+  & button {
+    background: #4B51EF;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

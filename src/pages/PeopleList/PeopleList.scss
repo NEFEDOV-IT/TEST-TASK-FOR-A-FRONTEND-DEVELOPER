@@ -1,0 +1,60 @@
+.people {
+  flex: 1;
+  padding: 0 35px;
+  @media screen and (max-width: 545px) {
+    justify-content: center;
+  }
+  .people__title {
+    padding: 20px 0;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+  }
+  & .people__list {
+    max-width: 420px;
+    @media screen and (max-width: 545px) {
+      max-width: 100%;
+    }
+    & .people__list-li {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background: #F3F3F3;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      & span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 13px;
+        color: #A3A3A3;
+      }
+      & div {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 17px;
+        color: #000000;
+      }
+      & button {
+        align-self: flex-end;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14px;
+        color: #4B51EF;
+        background-color: inherit;
+        cursor: pointer;
+      }
+      & .li-company-name {
+        margin-bottom: 3px;
+      }
+    }
+    & .people__total {
+      padding-top: 10px;
+      text-align: right;
+    }
+  }
+}

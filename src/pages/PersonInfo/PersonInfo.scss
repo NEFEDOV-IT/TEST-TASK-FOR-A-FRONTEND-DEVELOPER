@@ -1,0 +1,111 @@
+.person {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 35px;
+  @media screen and (max-width: 685px) {
+    flex: 1;
+  }
+  @media screen and (max-width: 385px) {
+    padding: 10px 15px;
+  }
+
+  .person__body {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 11px;
+
+    & .person__title {
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16px;
+      color: #000;
+    }
+
+    & .person__button {
+      display: block;
+      background: #4B51EF;
+      border-radius: 5px;
+      padding: 6px 11px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  .person__form {
+    position: relative;
+    width: 438px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #F3F3F3;
+    border-radius: 8px;
+    padding: 32px 6px 19px 12px;
+    margin-bottom: 14px;
+    @media screen and (max-width: 685px) {
+      width: 100%;
+    }
+
+    & .form__input {
+      width: 211px;
+      border: 1px solid #D8D8D8;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      @media screen and (max-width: 685px) {
+        width: 100%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.error {
+        border: 1px solid #D91313;
+      }
+    }
+
+    & label {
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+
+    & textarea {
+      background: #FFFFFF;
+      border: 1px solid #D8D8D8;
+      border-radius: 5px;
+      width: 420px;
+      height: 55px;
+      resize: none;
+      padding: 5px 10px;
+      @media screen and (max-width: 685px) {
+        width: 100%;
+      }
+    }
+  }
+
+  & .form__input-button-back {
+    align-self: flex-start;
+    display: block;
+    background: #4B51EF;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  & .form__input-button {
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    align-self: flex-end;
+    display: block;
+    background: #AFAFAF;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #fff;
+    cursor: pointer;
+
+    &.active {
+      background: #52CF4F;
+    }
+  }
+}

@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename="/_sites/test_people">
             <App/>
         </BrowserRouter>
     </Provider>

@@ -1,3 +1,9 @@
+Тестовое задание для соискателя на должность frontend-разработчика
+
+Использованы технологии: React | React Router | Redux Toolkit | SCSS | AXIOS
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

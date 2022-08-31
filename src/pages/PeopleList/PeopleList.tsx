@@ -8,6 +8,7 @@ import {URL} from "../../utils";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {addPeopleData} from "../../store/people.slice";
+import Loader from "../../components/Loader/Loader";
 
 const PeopleList: FC = () => {
     const users = useSelector<IUser[]>(state => state)
@@ -37,7 +38,7 @@ const PeopleList: FC = () => {
             <div className="people__title">Список пользователей</div>
             {isError && <p>Error page. Not found people.</p>}
             <div className="people__list">
-                {isLoading ? <p>Loading...</p> :
+                {isLoading ? <Loader/> :
                     <List items={users}
                           renderItem={(user: IUser) =>
                               <PeopleItem onClick={(user) =>

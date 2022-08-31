@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, FormEvent, useEffect, useState} from 'react';
+import React, {FC, FormEvent, useEffect, useState} from 'react';
 import {IUser} from "../../types/types.people";
 import axios from "axios";
 import {URL} from "../../utils";
@@ -6,6 +6,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import './PersonInfo.scss'
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import Loader from "../../components/Loader/Loader";
 
 const PersonInfo: FC = () => {
     const navigate = useNavigate()
@@ -51,9 +52,15 @@ const PersonInfo: FC = () => {
         <div className={'person'}>
             <div className="person__body">
                 <div className="person__title">Профиль пользователя</div>
-                <button onClick={ChangeRead} className="person__button">Редактировать</button>
+                {isLoading ||
+                  <Button
+                    classButton={'person__button'}
+                    onClick={ChangeRead}
+                  >
+                    Редактировать
+                  </Button>}
             </div>
-            {isLoading ? <p>Loading...</p> :
+            {isLoading ? <Loader/> :
                 <form onSubmit={fetchToJson} className="person__form">
                     <Input setIsError={setIsError} name={'Name'} user={user} setUser={setUser}
                            userParams={user?.name} read={read}/>
@@ -75,11 +82,12 @@ const PersonInfo: FC = () => {
                     <textarea value={area} onChange={(e) => setArea(e.target.value)} name="comment"></textarea>
                     <Button classButton={read ? 'form__input-button' : 'form__input-button active'}>Отправить</Button>
                 </form>}
-            <Button
+            {isLoading ||
+              <Button
                 classButton={'form__input-button-back'}
                 onClick={() => navigate('/')}>
                 Назад
-            </Button>
+              </Button>}
         </div>
     );
 };

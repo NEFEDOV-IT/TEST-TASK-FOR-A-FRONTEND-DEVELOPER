@@ -6,13 +6,13 @@ import {Provider} from "react-redux";
 import {store} from "./store";
 
 const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement
 );
 
 root.render(
-    <Provider store={store}>
-        <BrowserRouter basename="/_sites/test_people">
-            <App/>
-        </BrowserRouter>
-    </Provider>
+  <Provider store={store}>
+    <BrowserRouter basename="/_sites/test_people">
+      <App/>
+    </BrowserRouter>
+  </Provider>
 );
